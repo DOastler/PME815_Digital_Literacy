@@ -1,0 +1,200 @@
+
+<style>
+  /* ===== Base reset ===== */
+  body, .wp-block-group, .wp-block-columns, main {
+    background: #000 !important;
+    color: #fff !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.7 !important;
+    margin: 0; padding: 0;
+  }
+  a { color: #ccc !important; text-decoration: underline; }
+  a:hover { color: #fff !important; }
+
+  /* ===== Quote banner ===== */
+  #quote-banner {
+    background: #111;
+    border-bottom: 1px solid #333;
+    padding: 18px 24px;
+    text-align: center;
+    font-style: italic;
+    font-size: 12pt;
+    min-height: 1.8em;
+    transition: opacity 0.6s ease;
+  }
+
+  /* ===== Accessibility bar ===== */
+  #a11y-bar {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 24px;
+    border-bottom: 1px solid #222;
+    flex-wrap: wrap;
+  }
+  .a11y-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 7px 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .a11y-btn:hover { background: #222; border-color: #888; }
+  .a11y-btn.active {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+  }
+
+  /* ===== Content area ===== */
+  #main-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  #main-content h1, #main-content h2, #main-content h3 {
+    font-family: inherit;
+    color: #fff;
+    margin-top: 1.6em;
+    margin-bottom: 0.5em;
+  }
+  #main-content p {
+    margin-bottom: 1em;
+  }
+
+  /* ===== Dyslexic mode ===== */
+  @font-face {
+    font-family: 'OpenDyslexic';
+    src: url('https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/woff/OpenDyslexic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  body.dyslexic-mode,
+  body.dyslexic-mode * {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+  }
+
+  /* ===== Large font mode ===== */
+  body.large-font-mode,
+  body.large-font-mode #quote-banner,
+  body.large-font-mode #main-content,
+  body.large-font-mode .a11y-btn {
+    font-size: 16pt !important;
+  }
+
+  /* ===== Colour blind mode ===== */
+  body.cb-mode {
+    background: #1a1a2e !important;
+    color: #f0e68c !important;              /* warm yellow — safe across all types */
+  }
+  body.cb-mode a { color: #87ceeb !important; }         /* sky blue */
+  body.cb-mode #quote-banner { background: #16213e; border-color: #2a3a5c; color: #f0e68c !important; }
+  body.cb-mode #a11y-bar { border-color: #2a3a5c; }
+  body.cb-mode .a11y-btn {
+    color: #f0e68c;
+    border-color: #7a7a3a;
+  }
+  body.cb-mode .a11y-btn:hover { background: #2a3a5c; }
+  body.cb-mode .a11y-btn.active {
+    background: #f0e68c;
+    color: #1a1a2e;
+    border-color: #f0e68c;
+  }
+  body.cb-mode .wp-block-group,
+  body.cb-mode .wp-block-columns,
+  body.cb-mode main {
+    background: #1a1a2e !important;
+    color: #f0e68c !important;
+  }
+</style>
+
+<!-- Quote banner -->
+<div id="quote-banner">
+  <span id="quote-text"></span>
+</div>
+
+<!-- Accessibility buttons -->
+<div id="a11y-bar">
+  <button class="a11y-btn" id="btn-dyslexic" onclick="toggleMode('dyslexic')" aria-label="Toggle dyslexia-friendly font">Dyslexic</button>
+  <button class="a11y-btn" id="btn-largefont" onclick="toggleMode('largefont')" aria-label="Toggle large font size">Large Font</button>
+  <button class="a11y-btn" id="btn-cb" onclick="toggleMode('cb')" aria-label="Toggle colour blind friendly mode">Colour Blind</button>
+</div>
+
+<!-- Main content area -->
+<div id="main-content">
+  <h1>Digital Innovation and Climate Change</h1>
+
+  <p>The relationship between digital innovation and climate change is one of the defining tensions of our time. The Information and Communication Technology sector is responsible for an estimated 2.1% to 3.9% of global greenhouse gas emissions when full supply chain impacts are accounted for (Freitag et al., 2021), and that figure is poised to grow. Artificial intelligence, in particular, threatens to accelerate this trend. For example, training a single large-scale machine learning model can produce hundreds of thousands of kilograms of CO&#8322; or its equivalent, and the computational demands of AI have been doubling roughly every few months. However, digital innovation also holds genuine promise for addressing the climate crisis, provided we are willing to pair ambition with accountability.</p>
+
+  <p>On the positive side, digital technologies have already begun enabling a lower-carbon world in meaningful ways. Renewable energy systems depend on sophisticated digital infrastructure for grid management, demand forecasting, and the coordination of intermittent power sources like wind and solar. Video conferencing and remote collaboration tools offer real alternatives to carbon-intensive air travel, so long as they substitute flights rather than simply supplement them. Smart city applications, from optimized traffic routing to intelligent building management, demonstrate how the Internet of Things can reduce energy consumption across sectors when deployed thoughtfully.</p>
+
+  <p>The trouble is that efficiency gains in ICT have historically been consumed by rising demand. This pattern, closely related to the rebound effect described by Jevons Paradox, means that as devices and infrastructure become more efficient, we tend to use more of them rather than banking the energy savings. Freitag et al. (2021) note that ICT's carbon footprint has grown continuously alongside global emissions, even as the technology itself has become dramatically more efficient. Renewable energy, while essential, is not a silver bullet in and of itself. There are material constraints on its expansion and practical limits to powering decentralised networks and billions of user devices from green sources alone.</p>
+
+  <p>This is where targeted regulation could make a real difference. We have reached an era where even low-power consumer devices are extraordinarily capable. A modern smartphone or tablet can edit multiple streams of 4K video. There is simply no pressing need for additional raw processing power in most consumer applications; the priority should be efficiency, not horsepower. Governments could mandate power consumption limits for consumer electronics, much like fuel efficiency standards have shaped the automotive industry, without meaningfully diminishing functionality.</p>
+
+  <p>A bolder step would be to require that AI operations are powered exclusively by renewable energy. The enormous capital currently flowing into AI infrastructure represents a generational investment. Tying that investment to sustainable energy sourcing would accomplish several things at once. It would prevent AI data centres from straining existing grids or relying on fossil fuels to bridge capacity gaps. It would also introduce a natural brake on reckless expansion, giving companies more time to focus on developing AI safely and responsibly rather than racing to build out infrastructure at any environmental cost. If an AI company must secure its own sustainable power supply before constructing a new data centre, the incentive structure shifts in favour of deliberation over haste.</p>
+
+  <p>We must also reckon with the equity dimension. Climate change disproportionately affects poorer countries and individuals, while wealthier nations and their citizens generate the bulk of emissions, including those from the ICT sector. At the same time, digital innovation has opened important doors for accessibility and inclusion. Hearing aids, visual aids, text-to-speech, speech-to-text, and emerging neurotechnology interfaces are transforming the lives of people with disabilities. These benefits are real and should not be dismissed.</p>
+
+  <p>The challenge, then, is not to choose between digital progress and environmental responsibility, but to insist on both. A sustainable digital future is possible, but it will not arrive by default. It requires deliberate policy, honest accounting of ICT's full climate impact, and the political will to ensure that innovation serves people and the planet alike.</p>
+
+  <h2>References</h2>
+
+  <p>AEM Center at CAST. (n.d.). Designing for accessibility. <a href="https://aem.cast.org/create/designing-accessibility-pour">https://aem.cast.org/create/designing-accessibility-pour</a></p>
+
+  <p>Freitag, C., Berners-Lee, M., Widdicks, K., Knowles, B., Blair, G. S., &amp; Friday, A. (2021). The real climate and transformative impact of ICT: A critique of estimates, trends, and regulations. <em>Patterns, 2</em>(9), 100340. <a href="https://doi.org/10.1016/j.patter.2021.100340">https://doi.org/10.1016/j.patter.2021.100340</a></p>
+
+  <p>World Wide Web Consortium. (2025, October 20). WCAG 2 overview. Web Accessibility Initiative. <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">https://www.w3.org/WAI/standards-guidelines/wcag/</a></p>
+</div>
+
+<script>
+(function () {
+  /* ---------- Quote rotator ---------- */
+  var quotes = [
+    { text: "Live simply so that others may simply live.", author: "Mahatma Gandhi" },
+    { text: "We are stuck with technology when what we really want is just stuff that works.", author: "Douglas Adams" },
+    { text: "The most environmentally friendly product is the one you didn\u2019t buy.", author: "Joshua Becker" },
+    { text: "The greatest threat to our planet is the belief that someone else will save it.", author: "Robert Swan" }
+  ];
+  var current = 0;
+  var banner = document.getElementById("quote-banner");
+  var qText  = document.getElementById("quote-text");
+
+  function showQuote(i) {
+    qText.innerHTML = "\u201C" + quotes[i].text + "\u201D \u2014 " + quotes[i].author;
+  }
+
+  function cycleQuote() {
+    banner.style.opacity = "0";
+    setTimeout(function () {
+      current = (current + 1) % quotes.length;
+      showQuote(current);
+      banner.style.opacity = "1";
+    }, 600);
+  }
+
+  showQuote(0);
+  setInterval(cycleQuote, 30000);
+
+  /* ---------- Accessibility toggles ---------- */
+  var modes = {
+    dyslexic: { bodyClass: "dyslexic-mode", btnId: "btn-dyslexic" },
+    largefont: { bodyClass: "large-font-mode", btnId: "btn-largefont" },
+    cb:       { bodyClass: "cb-mode",         btnId: "btn-cb" }
+  };
+
+  window.toggleMode = function (key) {
+    var mode = modes[key];
+    document.body.classList.toggle(mode.bodyClass);
+    document.getElementById(mode.btnId).classList.toggle("active");
+  };
+})();
+</script>
+<!-- /wp:html -->
